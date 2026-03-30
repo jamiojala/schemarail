@@ -1,0 +1,64 @@
+{
+  "name": "@jamiojala/schemarail",
+  "version": "0.1.0",
+  "description": "Schema-first guardrails for turning messy LLM responses into validated TypeScript-safe objects.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamiojala/schemarail.git"
+  },
+  "homepage": "https://github.com/jamiojala/schemarail#readme",
+  "bugs": {
+    "url": "https://github.com/jamiojala/schemarail/issues"
+  },
+  "keywords": [
+    "llm",
+    "structured-output",
+    "schema",
+    "validation",
+    "guardrails",
+    "typescript",
+    "json"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "docs"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.18"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf dist .turbo coverage",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "pnpm typecheck && pnpm test && pnpm build",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "@types/node": "^22.14.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1",
+    "zod": "^3.24.3"
+  }
+}
